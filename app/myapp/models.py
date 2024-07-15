@@ -8,3 +8,7 @@ class Food(models.Model):
     protein = models.FloatField()
     fats = models.FloatField()
     calories = models.IntegerField()
+
+    def __str__(self) -> str:
+        return self.name
+    
