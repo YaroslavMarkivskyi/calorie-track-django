@@ -38,7 +38,7 @@
                                 </label>
                                 <select class="col-md-6 form-control" name="food_consumed" id="food_consumed">
                                         {% for food in foods %}
-                                         <option value="{‌{food.name}}">{‌{food.name}}</option>
+                                         <option value="{{food.name}}">{{food.name}}</option>
                                         {% endfor %}
                                 </select>
                                 <button class="btn btn-success" type="submit">Add</button>
@@ -65,11 +65,11 @@
                         </tr>
                                 {% for c in consumed_food %}
                                 <tr>
-                                    <td>{‌{c.food_consumed.name}}</td>
-                                    <td>{‌{c.food_consumed.carbs}}</td>
-                                    <td>{‌{c.food_consumed.protein}}</td>
-                                    <td>{‌{c.food_consumed.fats}}</td>
-                                    <td>{‌{c.food_consumed.calories}}</td>
+                                    <td>{{c.food_consumed.name}}</td>
+                                    <td>{{c.food_consumed.carbs}}</td>
+                                    <td>{{c.food_consumed.protein}}</td>
+                                    <td>{{c.food_consumed.fats}}</td>
+                                    <td>{{c.food_consumed.calories}}</td>
                                     <td><a class="btn btn-danger" href="{% url 'delete' c.id %}">X</a></td>
                                 </tr>
 
