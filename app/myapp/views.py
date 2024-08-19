@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+
 from .models import Food, Consume
-# Create your views here.
 
 
+@login_required
 def index(request):
     if request.method == "POST":
         food_consumed = request.POST['food_consumed']
@@ -18,6 +20,7 @@ def index(request):
     return render(request, 'food/index.html', {'foods': foods, 'consumed_food': consumed_food})
 
 
+@login_required
 def delete_consume(request, id):
     consumed_food = Consume.objects.get(id=id)
     if request.method == "POST":
